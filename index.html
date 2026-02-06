@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app-wrapper">
+        <div class="container">
+            <pre id="ascii-title">
+    ██████    ███████████  
+  ███░░░░███ ░░███░░░░░███ 
+ ███    ░░███ ░███    ░███ 
+░███     ░███ ░██████████  
+░███   ██░███ ░███░░░░░███ 
+░░███ ░░████  ░███    ░███ 
+ ░░░██████░██ █████   █████
+   ░░░░░░ ░░ ░░░░░   ░░░░░ 
+            </pre>
+
+            <div class="input-group">
+                <!-- <label for="qr-text">Link or Text:</label> -->
+                <input type="text" id="qr-text" placeholder="Enter link here">
+            </div>
+
+            <div class="input-group" id="border-control-group">
+                <label for="qr-border-slider">BORDER <span id="qr-border-value">10</span></label>
+                <input type="range" id="qr-border-slider" min="0" max="20" value="10">
+            </div>
+
+            <div class="action-buttons">
+                <button id="generate-qr-btn">GENERATE</button>
+                <button id="download-qr-btn">DOWNLOAD</button>
+            </div>
+
+            <div id="qrcode-container">
+                </div>
+        </div>
+
+        <div id="favorites-panel" class="sidebar">
+            <div class="color-pickers">
+                <div class="picker-group">
+                    <label>FOREGROUND</label>
+                    <div class="color-picker" id="foreground-color-picker"></div>
+                    <input type="text" id="foreground-hex" class="hex-input" maxlength="7">
+                </div>
+                <div class="picker-group">
+                    <label>BACKGROUND</label>
+                    <div class="color-picker" id="background-color-picker"></div>
+                    <input type="text" id="background-hex" class="hex-input" maxlength="7">
+                </div>
+            </div>
+            <ul id="favorites-list">
+                </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
